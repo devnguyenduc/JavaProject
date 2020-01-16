@@ -1,1 +1,1 @@
-# javaproject
+# Spring Boot Project
