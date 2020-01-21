@@ -1,4 +1,4 @@
-package com.coindesk.coin;
+package com.example.demo;
 
 import com.coindesk.coin.Coin;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,14 +1,10 @@
-package com.coindesk.coin;
+package com.example.demo;
 
-import com.coindesk.module.StringUtil;
-import com.coindesk.user.User;
-import com.coindesk.user.UsersRepository;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.util.Date;
 
 @Entity
 public class Coin {
