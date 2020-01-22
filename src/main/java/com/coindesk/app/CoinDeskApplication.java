@@ -30,12 +30,12 @@ public class CoinDeskApplication {
     @Bean
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
-            // save a few customers
-            repository.save(new Customer("Jack", "Bauer"));
-            repository.save(new Customer("Chloe", "O'Brian"));
-            repository.save(new Customer("Kim", "Bauer"));
-            repository.save(new Customer("David", "Palmer"));
-            repository.save(new Customer("Michelle", "Dessler"));
+//            // save a few customers
+//            repository.save(new Customer("Jack", "Bauer"));
+//            repository.save(new Customer("Chloe", "O'Brian"));
+//            repository.save(new Customer("Kim", "Bauer"));
+//            repository.save(new Customer("David", "Palmer"));
+//            repository.save(new Customer("Michelle", "Dessler"));
 
             // fetch all customers
             log.info("Customers found with findAll():");
@@ -65,4 +65,9 @@ public class CoinDeskApplication {
         };
     }
 
+    /*
+    *   chia lai domain
+    *   chia profiles lai trong application cho 3 loai: dev, prod, test
+    *   tao data migration liquilbase de generate data khong can viet trong ham commandline https://www.roytuts.com/evolving-database-using-spring-boot-liquibase/
+    *  */
 }
