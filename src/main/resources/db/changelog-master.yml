@@ -1,24 +1,14 @@
 databaseChangeLog:
-  - changeSet:
-      id: createTable
-      author: Duc Nguyen
-      changes:
-        - sqlFile:
-            dbms: mysql
-            encoding: utf8
-            endDelimiter: \n/\s*\n|\n/\s*$
-            path: changelog/scripts/01-create-customers-schema.sql
-            relativeToChangelogFile: true
-            splitStatements: true
-            stripComments: true
-  - changeSet:
-      id: insertTableCustomers
-      author: Soumitra Roy
-      changes:
-        - sqlFile:
-            dbms: mysql
-            encoding: utf8
-            path: changelog/scripts/02-insert-data-customers.sql
-            relativeToChangelogFile: true
-            splitStatements: true
-            stripComments: true
+      - changeSet:
+              id: createNewExamTable
+              validCheckSum: 8:45cd45b526538d382e173e9b49c12315
+              author: Duc Nguyen
+              changes:
+                    - sqlFile:
+                            dbms: mysql
+                            encoding: utf8
+                            endDelimiter: \n/\s*\n|\n/\s*$
+                            path: changelog/scripts/changes/v0001.sql
+                            relativeToChangelogFile: true
+                            splitStatements: true
+                            stripComments: true

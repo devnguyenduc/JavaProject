@@ -1,34 +1,42 @@
-package com.coindesk.coin;
+package com.coindesk.model;
 
 import com.coindesk.module.StringUtil;
-import com.coindesk.user.User;
-import com.coindesk.user.UsersRepository;
-import org.springframework.data.annotation.Id;
+
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.util.Date;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Validated
 public class Coin {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-    private String name;
+    private Long id;
+    @NotNull
+    private String coinName;
+    @NotNull
     private double value;
 
-    public Coin(String name, double value) {
-        this.name = name;
+    protected Coin(){
+
+    }
+    public Coin(String coinName, double value) {
+        this.coinName = coinName;
         this.value = value;
     }
 
     public String getName() {
-        return name;
+        return coinName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.coinName = name;
     }
 
     public double getValue() {

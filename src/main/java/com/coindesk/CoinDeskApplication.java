@@ -1,20 +1,14 @@
-package com.coindesk.app;
+package com.coindesk;
 
-import com.coindesk.service.UsersService;
-import com.coindesk.user.User;
-import com.coindesk.user.UsersRepository;
-import com.initialization.Person;
+import com.coindesk.model.Customer;
+import com.coindesk.repository.CustomerRepository;
 import com.initialization.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.Iterator;
-import java.util.List;
 
 @SpringBootApplication
 public class CoinDeskApplication {

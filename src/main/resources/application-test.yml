@@ -8,4 +8,4 @@ spring:
     generate-ddl: true
     show-sql: true
   liquibase:
-    changeLog: classpath:db/changelog-test.yml
+    changeLog: classpath:db/changelog-master.yml
