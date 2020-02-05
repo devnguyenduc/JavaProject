@@ -21,5 +21,10 @@ public class StringUtil {
             throw new RuntimeException(e);
         }
     }
-
+    public String validKeyWhenSuccess(){
+        return "success";
+    }
+    public String validKeyWhenFail(){
+        return "fail";
+    }
 }
