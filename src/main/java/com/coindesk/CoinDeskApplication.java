@@ -2,7 +2,6 @@ package com.coindesk;
 
 import com.coindesk.model.Customer;
 import com.coindesk.repository.CustomerRepository;
-import com.initialization.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
