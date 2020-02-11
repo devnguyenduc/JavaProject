@@ -1,76 +1,60 @@
 package com.coindesk.model;
 
-import org.springframework.validation.annotation.Validated;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 
 @Entity
-@Validated
 public class Customer {
-
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    @Size(min=1, max=20)
-    @NotNull
-    private String firstName;
-    @Size(min=1, max=40)
-    @NotNull
-    private String lastName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
 
-    protected Customer() {
-        this.firstName = " ";
-        this.lastName = " ";
+    private String email;
+
+    private long personId;
+    @Transient
+    private Person person;
+
+    private long atmId;
+    @Transient
+    private ATM atm;
+
+    public Customer(long personId, long atmId) {
+        this.personId = personId;
+        this.atmId = atmId;
     }
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public long getId() {
+        return Id;
     }
 
-    public Customer(Customer temp){
-        this.id = temp.id;
-        this.firstName = temp.firstName;
-        this.lastName = temp.lastName;
+    public void setId(long id) {
+        Id = id;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+    public long getPersonId() {
+        return personId;
     }
 
-    public void set(Customer _customer){
-        if(this.id != _customer.id){
-            return ;
-        }
-        this.firstName = _customer.firstName;
-        this.lastName = _customer.lastName;
+    public void setPersonId(long personId) {
+        this.personId = personId;
     }
 
-    public Long getId() {
-        return id;
+    public Person getPerson() {
+        return person;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
-    public String getLastName() {
-        return lastName;
+    public long getATMId() {
+        return atmId;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setATMId(long atmId) {
+        this.atmId = atmId;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

@@ -1,0 +1,2 @@
+INSERT INTO VALID_CUSTOMER(email,password,enabled,roles) values("admin@coindesk.com","admin",1,"ADMIN");
+INSERT INTO VALID_CUSTOMER(email,password,enabled,roles) values("customer@coindesk.com","pass",1,"USER");

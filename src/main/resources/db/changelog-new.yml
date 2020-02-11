@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: createPeopleTable
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/01-create-people-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: insertTablePeople
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            path: changelog/scripts/02-insert-data-people.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: createCoinTable
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/01-create-coin-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: insertTableCoin
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/01-create-coin-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: createCashTable
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/01-create-cash-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+      id: createAtmTable
+      validCheckSum: 8:d8ca6f25f317f6f2ce5352d0d64f94d9
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/01-create-atm-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+
+

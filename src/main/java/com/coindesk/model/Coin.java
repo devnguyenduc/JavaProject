@@ -1,7 +1,5 @@
 package com.coindesk.model;
 
-import com.coindesk.module.StringUtil;
-
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.Entity;
@@ -17,7 +15,7 @@ public class Coin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     @NotNull
     private String coinName;
     @NotNull

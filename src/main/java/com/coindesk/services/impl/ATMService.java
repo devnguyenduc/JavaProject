@@ -1,4 +1,5 @@
 package com.coindesk.services.impl;
 
-public class CustomerService {
+public class ATMService {
+
 }

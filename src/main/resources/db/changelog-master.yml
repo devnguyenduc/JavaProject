@@ -1,14 +1,72 @@
 databaseChangeLog:
-      - changeSet:
-              id: createNewExamTable
-              validCheckSum: 8:45cd45b526538d382e173e9b49c12315
-              author: Duc Nguyen
-              changes:
-                    - sqlFile:
-                            dbms: mysql
-                            encoding: utf8
-                            endDelimiter: \n/\s*\n|\n/\s*$
-                            path: changelog/scripts/changes/v0001.sql
-                            relativeToChangelogFile: true
-                            splitStatements: true
-                            stripComments: true
+        - changeSet:
+                  id: createPeopleTable
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    endDelimiter: \n/\s*\n|\n/\s*$
+                                    path: changelog/scripts/01-create-people-schema.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
+        - changeSet:
+                  id: insertTablePeople
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    path: changelog/scripts/02-insert-data-people.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
+        - changeSet:
+                  id: createCoinTable
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    endDelimiter: \n/\s*\n|\n/\s*$
+                                    path: changelog/scripts/01-create-coin-schema.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
+        - changeSet:
+                  id: insertTableCoin
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    endDelimiter: \n/\s*\n|\n/\s*$
+                                    path: changelog/scripts/01-create-coin-schema.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
+        - changeSet:
+                  id: createCashTable
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    endDelimiter: \n/\s*\n|\n/\s*$
+                                    path: changelog/scripts/01-create-cash-schema.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
+        - changeSet:
+                  id: createAtmTable
+                  author: Duc Nguyen
+                  changes:
+                          - sqlFile:
+                                    dbms: mysql
+                                    encoding: utf8
+                                    endDelimiter: \n/\s*\n|\n/\s*$
+                                    path: changelog/scripts/01-create-atm-schema.sql
+                                    relativeToChangelogFile: true
+                                    splitStatements: true
+                                    stripComments: true
