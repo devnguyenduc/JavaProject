@@ -21,7 +21,6 @@ public class CoinController {
 
     @GetMapping("")
     public String allCoin(Model model){
-        List<Coin> coins = new ArrayList<Coin>();
         model.addAttribute("coins", coinService.get());
         return "admin/coin/index";
     }
@@ -39,14 +38,14 @@ public class CoinController {
     }
 
     @GetMapping("update/{id}")
-    public String changeCoinDesk(@RequestParam long id, Model model){
+    public String changeCoinDesk(@PathVariable(name = "id") long id, Model model){
         model.addAttribute("coin", coinService.getById(id));
         return "admin/coin/update";
     }
 
     @PostMapping("update/{id}")
-    public String change(Coin coin){
-        Optional<Coin> findCoin = coinService.getByName(coin.getCoinName());
+    public String change(@PathVariable(name = "id") long id, Coin coin){
+        Optional<Coin> findCoin = coinService.getById(id);
         Coin changeCoin = new Coin(coin.getCoinName(),coin.getValue(),coin.getNumber());
         changeCoin.setId(coin.getId());
         String result = coinService.change(changeCoin);
