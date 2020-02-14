@@ -35,11 +35,11 @@ public class CoinController {
     @RequestMapping(value = "create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String insert(Coin coin){
         String result = coinService.insertNewCoin(coin);
-        return "redirect:/admin/coin&"+result;
+        return "redirect:/admin/coin";
     }
 
     @GetMapping("update/{id}")
-    public String changeCoinDesk(@RequestParam long id,Model model){
+    public String changeCoinDesk(@RequestParam long id, Model model){
         model.addAttribute("coin", coinService.getById(id));
         return "admin/coin/update";
     }

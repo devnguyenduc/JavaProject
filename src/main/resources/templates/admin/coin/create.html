@@ -7,7 +7,7 @@
 <form th:action="@{/admin/coin/create}" method="post" th:object="${coin}" class="form-group">
     <input type="text" class="form-control" name="coinName" th:field="*{coinName}"  placeholder="name input">
     <input type="text" class="form-control" name="value" th:field="*{value}" placeholder="value input">
-    <input class="d-none" type="number" class="form-control" name="value" th:field="*{number}" placeholder="value input" value="0">
+    <input type="number" class="d-none" name="number" th:field="*{number}" placeholder="value input" value="0">
     <input type="submit" class="btn btn-primary" value="create">
 </form>
 
