@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layouts/head::head"></head>
+<body>
+<header th:replace="layouts/head::header"></header>
+<nav th:replace="layouts/head::navbar"></nav>
+<section class="container">
+    <table class="table mt-4">
+        <thead>
+        <tr>
+            <th scope="col"> Index </th>
+            <th scope="col"> Coin </th>
+            <th scope="col"> Value </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="coin, iter : ${coins}">
+            <th scope="row"><span th:text="${iter.index + 1}"></span></th>
+            <td><span th:text="${coin.coinName}"> CoinName </span></td>
+            <td><span th:text="${coin.value}"> Value </span></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer th:replace="layouts/head::footer"></footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>

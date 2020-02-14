@@ -1,19 +1,20 @@
 <!doctype html>
 <html xmlns:th="https://www.thymeleaf.org">
 
-<head>
+<head th:replace="layouts/head::head">
     <title>Coindesk Login</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-<div class="container d-flex justify-content-center">
+<header th:replace="layouts/head::header"></header>
+<nav th:replace="layouts/head::navbar"></nav>
+<section>
+<div class="container card d-flex justify-content-center mt-5">
     <form name="login" class="form-group" th:action="@{/login}" method="post">
         <label for="username">User name</label>
         <input type="text" class="form-control" name="username" id="username">
@@ -23,6 +24,7 @@
         <input type="submit" class="btn btn-primary" value="Login">
     </form>
 </div>
+</section>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

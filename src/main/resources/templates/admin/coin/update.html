@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layouts/head::head"></head>
+<body>
+<header th:replace="layouts/head::header"></header>
+<nav th:replace="layouts/head::navbar"></nav>
+<form th:action="@{/admin/coin/create}" method="post" th:object="${coin}" class="form-group">
+    <input type="text" class="form-control" name="coinName" th:field="*{coinName}"  placeholder="name input" value="${coin.coinName}">
+    <input type="text" class="form-control" name="value" th:field="*{value}" placeholder="value input" value="${coin.value}">
+    <input class="d-none" type="number" name="value" th:field="*{number}" placeholder="number input" value="${coin.number}">
+    <input type="submit" class="btn btn-primary" value="create">
+</form>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>

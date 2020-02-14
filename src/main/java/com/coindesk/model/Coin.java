@@ -20,21 +20,24 @@ public class Coin {
     private String coinName;
     @NotNull
     private double value;
+    @NotNull
+    private long number;
 
-    protected Coin(){
+    public Coin(){
 
     }
-    public Coin(String coinName, double value) {
+    public Coin(String coinName, double value, long number) {
         this.coinName = coinName;
         this.value = value;
+        this.number = number;
     }
 
-    public String getName() {
+    public String getCoinName() {
         return coinName;
     }
 
-    public void setName(String name) {
-        this.coinName = name;
+    public void setCoinName(String coinName) {
+        this.coinName = coinName;
     }
 
     public double getValue() {
@@ -45,4 +48,19 @@ public class Coin {
         this.value = value;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getNumber() {
+        return number;
+    }
+
+    public void setNumber(long number) {
+        this.number = number;
+    }
 }

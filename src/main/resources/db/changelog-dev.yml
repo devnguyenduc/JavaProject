@@ -107,3 +107,23 @@ databaseChangeLog:
                   relativeToChangelogFile: true
                   splitStatements: true
                   stripComments: true
+
+  - changeSet:
+      id: dropTableCoinData
+      author: Duc Nguyen
+      changes:
+        - dropTable:
+            cascadeConstrains: true
+            tableName: coin
+  - changeSet:
+      id: createCoinTable02
+      author: Duc Nguyen
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/scripts/02-create-coin-schema.sql
+            relativeToChangelogFile: true
+            sqlitStatements: true
+            stripComments: true
