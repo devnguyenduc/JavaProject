@@ -1,7 +1,5 @@
 package com.coindesk.model;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
-
 import javax.persistence.*;
 
 @Entity
@@ -49,12 +47,19 @@ public class Customer {
         this.person = person;
     }
 
-    public long getATMId() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public long getAtmId() {
         return atmId;
     }
 
-    public void setATMId(long atmId) {
+    public void setAtmId(long atmId) {
         this.atmId = atmId;
     }
-
 }

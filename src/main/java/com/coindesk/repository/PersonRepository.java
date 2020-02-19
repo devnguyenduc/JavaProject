@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface PersonRepository extends CrudRepository<Person, Long> {
     Person findById(long id);
 
+    List<Person> findAll();
     List<Person> findByFirstName(String firstName);
     List<Person> findByLastName(String lastName);
 

@@ -1,10 +1,13 @@
 package com.coindesk.services.impl;
 
+import com.coindesk.model.Customer;
 import com.coindesk.model.Person;
 import com.coindesk.module.Authentication;
 import com.coindesk.repository.PersonRepository;
 import com.coindesk.services.DeskService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PersonService implements DeskService<Person> {
@@ -15,14 +18,13 @@ public class PersonService implements DeskService<Person> {
         this.personRepository = personRepository;
     }
 
-    @Override
-    public String insert(Person _customer){
-        personRepository.save(_customer);
+    public String insert(Person temp){
+
         return success;
     }
 
     @Override
-    public Iterable<Person> search(){
+    public List<Person> search(){
         return personRepository.findAll();
     }
 

@@ -8,10 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 @RequestMapping("/admin/coin")
@@ -19,9 +16,18 @@ public class CoinController {
     @Autowired
     CoinService coinService;
 
-    @GetMapping("")
-    public String allCoin(Model model){
-        model.addAttribute("coins", coinService.get());
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String allCoin(@RequestParam(name = "searchCoinName", required = false, defaultValue = "all") String searchCoinName,Model model){
+        Iterable<Coin> coins = coinService.get();
+        System.out.println(coins);
+        System.out.println(searchCoinName);
+        if(!searchCoinName.equals("all")) {
+            System.out.println(searchCoinName);
+            coins = coinService.getByNameContaining(searchCoinName);
+            coins.forEach(System.out::println);
+        }
+
+        model.addAttribute("coins", coins);
         return "admin/coin/index";
     }
 
@@ -39,7 +45,9 @@ public class CoinController {
 
     @GetMapping("update/{id}")
     public String changeCoinDesk(@PathVariable(name = "id") long id, Model model){
-        model.addAttribute("coin", coinService.getById(id));
+        Coin coin = coinService.getById(id).get();
+        System.out.println(coin.getId());
+        model.addAttribute("coin", coin);
         return "admin/coin/update";
     }
 

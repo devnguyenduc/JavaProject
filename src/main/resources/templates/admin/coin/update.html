@@ -4,11 +4,14 @@
 <body>
 <header th:replace="layouts/head::header"></header>
 <nav th:replace="layouts/head::navbar"></nav>
-<form th:action="@{/admin/coin/create}" method="post" th:object="${coin}" class="form-group">
-    <input type="text" class="form-control" name="coinName" th:field="*{coinName}"  placeholder="name input" value="${coin.coinName}">
-    <input type="text" class="form-control" name="value" th:field="*{value}" placeholder="value input" value="${coin.value}">
-    <input class="d-none" type="number" name="number" th:field="*{number}" placeholder="number input" value="${coin.number}">
-    <input type="submit" class="btn btn-primary" value="create">
+<form th:action="@{/admin/coin/update/{id}(id=${coin.id})}" method="post" th:object="${coin}" class="form-group">
+    <input type="hidden" class="form-control" name="coinName" th:field="*{coinName}"  value="${coin.coinName}">
+    <input type="text" class="form-control" id="value" name="value" th:field="*{value}"  value="${coin.value}">
+    <input class="form-control" type="hidden" name="number" th:field="*{number}"  value="${coin.number}">
+    <input type="submit" class="btn btn-primary" value="Update">
+    <script>
+        console.log(value.value);
+    </script>
 </form>
 
 <!-- Optional JavaScript -->
